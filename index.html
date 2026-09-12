@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Roulette Picker</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header class="app__header">
+      <h1 class="app__title">Roulette Picker</h1>
+      <p class="app__subtitle">Pick one person at a time, without repeats.</p>
+    </header>
+
+    <main class="app">
+      <section class="roster roster--available">
+        <h2 class="roster__title">
+          Available <span id="availableCount" class="roster__count">0</span>
+        </h2>
+        <ul id="availableList" class="roster__list"></ul>
+        <p id="availableEmpty" class="roster__empty">No people available.</p>
+      </section>
+
+      <section class="stage">
+        <div id="stageName" class="stage__name"></div>
+        <p id="stageMessage" class="stage__message">Press Next to start.</p>
+        <button id="spinButton" type="button" class="button button--primary">
+          Next
+        </button>
+      </section>
+
+      <section class="roster roster--selected">
+        <h2 class="roster__title">
+          Selected <span id="selectedCount" class="roster__count">0</span>
+        </h2>
+        <ul id="selectedList" class="roster__list"></ul>
+        <p id="selectedEmpty" class="roster__empty">Nobody selected yet.</p>
+      </section>
+    </main>
+
+    <footer class="composer">
+      <label class="composer__label" for="nameInput">Add a person</label>
+      <div class="composer__row">
+        <input
+          id="nameInput"
+          class="composer__input"
+          type="text"
+          placeholder="Type a name"
+          autocomplete="off"
+        />
+        <button id="addButton" type="button" class="button">Add</button>
+      </div>
+    </footer>
+  </body>
+</html>
