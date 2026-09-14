@@ -78,20 +78,23 @@ $(function () {
     void $element[0].offsetWidth;
   }
 
-  function createActionButton({ action, label }, id) {
+  function createActionButton({ action, label }, person) {
+    const description = `${label} ${person.name}`;
     return $("<button>", {
       type: "button",
       class: `roster__action roster__action--${action}`,
-      text: label,
       disabled: isSpinning,
+      title: description,
+      "aria-label": description,
       "data-action": action,
-      "data-id": id
+      "data-id": person.id,
+      html: `<svg class="roster__icon" aria-hidden="true" focusable="false"><use href="#icon-${action}"></use></svg>`
     });
   }
 
   function createRosterItem(person, actions) {
     const $actions = $("<div>", { class: "roster__actions" }).append(
-      actions.map((action) => createActionButton(action, person.id))
+      actions.map((action) => createActionButton(action, person))
     );
 
     return $("<li>", { class: "roster__item" }).append(

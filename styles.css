@@ -49,6 +49,10 @@ p {
   margin: 0;
 }
 
+.icon-sprite {
+  display: none;
+}
+
 .app__header {
   text-align: center;
 }
@@ -162,15 +166,24 @@ p {
 }
 
 .roster__action {
-  padding: 4px 8px;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
   border: 1px solid transparent;
   border-radius: var(--radius-sm);
   background: transparent;
   color: var(--color-text-muted);
-  font: inherit;
-  font-size: 0.78rem;
   cursor: pointer;
   transition: color 0.18s ease, background 0.18s ease;
+}
+
+.roster__icon {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+  pointer-events: none;
 }
 
 .roster__action:hover:not(:disabled) {
