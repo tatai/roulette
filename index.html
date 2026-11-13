@@ -53,12 +53,22 @@
         <p id="availableEmpty" class="roster__empty">No people available.</p>
       </section>
 
-      <section class="stage">
+      <section id="stage" class="stage" data-mode="focus">
+        <ul id="stageBoard" class="board"></ul>
+        <div id="stageWheel" class="wheel">
+          <div class="wheel__pointer"></div>
+          <canvas id="wheelCanvas" class="wheel__canvas" width="520" height="520"></canvas>
+        </div>
         <div id="stageName" class="stage__name"></div>
         <p id="stageMessage" class="stage__message">Press Next to start.</p>
         <button id="spinButton" type="button" class="button button--primary">
           Next
         </button>
+        <div class="modes" role="radiogroup" aria-label="Selection mode">
+          <button type="button" class="modes__option" role="radio" data-mode="classic">Classic</button>
+          <button type="button" class="modes__option" role="radio" data-mode="focus">Focus</button>
+          <button type="button" class="modes__option" role="radio" data-mode="wheel">Wheel</button>
+        </div>
       </section>
 
       <section class="roster roster--selected">
